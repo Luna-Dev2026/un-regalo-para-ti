@@ -1,0 +1,1050 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 razones por las que te amo ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --rosa: #ff4f87;
+    --rojo: #ff315a;
+    --morado: #8c52ff;
+    --crema: #fff4e8;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #592b4b;
+    background: linear-gradient(135deg, #ff8fab, #ffc6a5, #cdb4ff, #a0e7e5);
+    background-size: 300% 300%;
+    animation: fondo 12s ease infinite;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+@keyframes fondo {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 18px;
+    text-align: center;
+    position: relative;
+}
+
+.hero {
+    width: 100%;
+    max-width: 780px;
+    padding: 45px 25px;
+    border-radius: 35px;
+    background: rgba(255,255,255,.76);
+    border: 2px solid rgba(255,255,255,.8);
+    box-shadow: 0 20px 60px #9a477333;
+    backdrop-filter: blur(12px);
+    animation: aparecer 1.2s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(35px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.etiqueta {
+    display: inline-block;
+    background: #ffe0eb;
+    color: #d6336c;
+    border-radius: 30px;
+    padding: 9px 18px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: clamp(36px, 7vw, 66px);
+    line-height: 1.12;
+    margin: 22px 0;
+    background: linear-gradient(90deg, #ff3478, #a64dff, #ff795e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 580px;
+    margin: 0 auto 25px;
+}
+
+.corazon-grande {
+    font-size: 75px;
+    display: inline-block;
+    animation: latido 1.2s infinite;
+}
+
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: .25s;
+}
+
+.boton {
+    display: inline-block;
+    padding: 15px 24px;
+    margin: 7px;
+    border-radius: 30px;
+    color: white;
+    background: linear-gradient(90deg, #ff477e, #ff785e);
+    box-shadow: 0 7px 20px #ff477e44;
+}
+
+.boton:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 25px #ff477e55;
+}
+
+.boton-secundario {
+    color: #a13c78;
+    background: white;
+    border: 2px solid #ffc1d5;
+}
+
+section {
+    padding: 28px 18px;
+    text-align: center;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cada parte funciona como una escena independiente: solo se muestra la activa. */
+#inicio { display: none; }
+#inicio.escena-activa { display: flex; }
+section.escena-activa { display: flex !important; animation: escenaEntrada .45s ease; }
+@keyframes escenaEntrada {
+    from { opacity: 0; transform: scale(.985); }
+    to { opacity: 1; transform: scale(1); }
+}
+main { margin: 0; padding: 0; }
+footer { display: none; }
+#sobreSorpresa { display: none; min-height: 100vh; align-items: center; justify-content: center; }
+#sorpresas .contenedor, #juego .contenedor, #carta .contenedor, #final .contenedor { width: 100%; }
+.scene-next { margin-top: 24px; }
+
+/* La sección de sorpresas aparece únicamente después de abrir el sobre */
+#sorpresas { display: none; }
+#sobreSorpresa { display: none; min-height: 85vh; align-items: center; justify-content: center; }
+.sobre-contenedor { max-width: 650px; width: 100%; margin: auto; padding: 35px 20px; }
+.sobre { position: relative; width: min(330px, 82vw); height: 210px; margin: 55px auto 35px; background: #ff8eae; border-radius: 8px; box-shadow: 0 18px 35px #8c367533; cursor: pointer; perspective: 900px; }
+.sobre::before { content: ""; position: absolute; inset: 0; background: linear-gradient(140deg, transparent 49%, #ff6d98 50%), linear-gradient(220deg, transparent 49%, #ffb0c5 50%); border-radius: 8px; z-index: 2; }
+.tapa-sobre { position: absolute; z-index: 4; top: 0; left: 0; width: 100%; height: 58%; background: #ffb7cc; clip-path: polygon(0 0, 100% 0, 50% 100%); transform-origin: top; transition: transform .8s ease; }
+.carta-sobre { position: absolute; z-index: 1; left: 8%; top: 15%; width: 84%; height: 75%; padding: 20px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 6px; background: #fffaf6; color: #b33370; font-size: 18px; font-weight: bold; transition: transform 1s ease .25s; }
+.carta-sobre span { font-size: 38px; margin-bottom: 8px; }
+.sello-sobre { position: absolute; z-index: 5; top: 43%; left: 50%; transform: translate(-50%,-50%); font-size: 43px; transition: opacity .3s; }
+.sobre.abierto .tapa-sobre { transform: rotateX(180deg); z-index: 0; }
+.sobre.abierto .carta-sobre { transform: translateY(-115px); z-index: 5; }
+.sobre.abierto .sello-sobre { opacity: 0; }
+#sobreSorpresa .boton { margin-top: 12px; }
+
+.contenedor {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.titulo-seccion {
+    font-size: clamp(29px, 5vw, 43px);
+    color: #7c285d;
+    margin-bottom: 14px;
+}
+
+.subtitulo {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.tarjeta {
+    background: rgba(255,255,255,.83);
+    border: 1px solid rgba(255,255,255,.9);
+    padding: 30px;
+    border-radius: 28px;
+    box-shadow: 0 12px 35px #8c367522;
+}
+
+.numero {
+    color: #ff477e;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.razon {
+    min-height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(23px, 4vw, 34px);
+    font-weight: bold;
+    line-height: 1.45;
+    padding: 15px 0;
+}
+
+.progreso-fondo {
+    height: 8px;
+    border-radius: 20px;
+    background: #f9d9e7;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+#progreso {
+    height: 100%;
+    width: 1%;
+    background: linear-gradient(90deg, #ff477e, #a64dff);
+    transition: width .3s;
+}
+
+.controles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mensajes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 17px;
+    margin-top: 30px;
+}
+
+.mensaje-card {
+    background: rgba(255,255,255,.85);
+    padding: 27px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 25px #8c36751c;
+    transition: .3s;
+}
+
+.mensaje-card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+    border-color: #ff9ec0;
+}
+
+.mensaje-card .emoji {
+    display: block;
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.mensaje-card h3 {
+    margin-bottom: 8px;
+    color: #b33370;
+}
+
+.mensaje-card p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.juego-pregunta {
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+.opciones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.opcion {
+    padding: 13px 19px;
+    border-radius: 20px;
+    color: #8d3269;
+    background: #ffe3ed;
+}
+
+.opcion:hover {
+    background: #ffbfd5;
+    transform: scale(1.04);
+}
+
+#respuestaJuego {
+    min-height: 50px;
+    padding-top: 20px;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.carta {
+    text-align: left;
+    line-height: 2;
+    font-size: 17px;
+}
+
+.carta p {
+    margin-bottom: 15px;
+}
+
+.firma {
+    color: #e43e79;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.sorpresa-final {
+    background: linear-gradient(135deg, #ff477e, #a64dff);
+    color: white;
+    border-radius: 30px;
+    padding: 35px 25px;
+    margin-top: 25px;
+    display: none;
+    animation: aparecer .8s ease;
+}
+
+.sorpresa-final h3 {
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.sorpresa-final p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.flotante {
+    position: fixed;
+    bottom: -50px;
+    z-index: 0;
+    pointer-events: none;
+    animation: subir linear forwards;
+    opacity: .75;
+}
+
+@keyframes subir {
+    from { transform: translateY(0) rotate(0deg); opacity: .8; }
+    to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+main, header, footer {
+    position: relative;
+    z-index: 1;
+}
+
+footer {
+    padding: 35px 15px;
+    text-align: center;
+    color: #742b5d;
+    font-weight: 600;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: #38152dcc;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-contenido {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    background: white;
+    border-radius: 30px;
+    padding: 35px 25px;
+    box-shadow: 0 20px 70px #0003;
+    animation: aparecer .4s ease;
+}
+
+.modal-contenido .emoji {
+    font-size: 60px;
+}
+
+.modal-contenido h3 {
+    color: #e83e79;
+    font-size: 27px;
+    margin: 15px 0;
+}
+
+.modal-contenido p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+#estadoMusica {
+    font-size: 13px;
+    margin-top: 14px;
+    color: #8b4d78;
+}
+
+@media (max-width: 600px) {
+    .hero { padding: 35px 18px; }
+    section { padding: 55px 14px; }
+    .tarjeta { padding: 23px 17px; }
+    .carta { font-size: 15px; }
+}
+</style>
+</head>
+
+<body>
+
+<!--
+IMPORTANTE:
+Guarda tu canción en la misma carpeta que este HTML
+y ponle exactamente el nombre: musica.mp3
+-->
+
+<audio id="song" src="Maki, María Artés - Mil y Una Noches .mp3" loop preload="auto"></audio>
+
+<header id="inicio">
+    <div class="hero">
+        <span class="etiqueta">HECHO CON MUCHO AMOR PARA TI</span>
+        <div class="corazon-grande">💗</div>
+        <h1>100 razones<br>por las que te amo</h1>
+        <p>
+            No necesito una fecha especial para recordarte lo importante que eres
+            para mí. Hoy hice algo diferente, algo que lleva un poquito de mi
+            corazón y muchísimo cariño para ti.
+        </p>
+        <button class="boton" onclick="comenzar()">Abrir mi regalo 💌</button>
+        <button class="boton boton-secundario" onclick="alternarMusica()">🎵 Música</button>
+        <p id="estadoMusica">Pulsa Música para escuchar la canción.</p>
+    </div>
+</header>
+
+<main>
+
+<section id="razones">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Mis 100 razones para amarte 💕</h2>
+        <p class="subtitulo">
+            Podría escribir muchísimas más, pero quise empezar con estas cien.
+            Lee cada una despacito, porque todas tienen un poquito de ti.
+        </p>
+
+        <div class="tarjeta">
+            <div class="numero" id="numeroRazon">RAZÓN 1 DE 100</div>
+            <div class="razon" id="textoRazon">
+                Porque tu sonrisa tiene una manera especial de alegrarme el día.
+            </div>
+            <div class="progreso-fondo">
+                <div id="progreso"></div>
+            </div>
+            <div class="controles">
+                <button class="boton boton-secundario" onclick="cambiarRazon(-1)">← Anterior</button>
+                <button class="boton" onclick="cambiarRazon(1)">Siguiente razón →</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="sobreSorpresa">
+    <div class="sobre-contenedor">
+        <h2 class="titulo-seccion">Una cosita más para ti 💌</h2>
+        <p class="subtitulo">Terminaste mis 100 razones. Pero preparé algo más... toca el sobre para abrirlo.</p>
+        <div class="sobre" id="sobreAnimado" role="button" tabindex="0" aria-label="Abrir el sobre" onclick="abrirSobre()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirSobre();}">
+            <div class="carta-sobre"><span>💌</span>Un mensajito especial para ti</div>
+            <div class="tapa-sobre"></div>
+            <div class="sello-sobre">💗</div>
+        </div>
+        <button class="boton" id="botonAbrirSobre" onclick="abrirSobre()">Abrir mi sobre 💖</button>
+    </div>
+</section>
+
+<section id="sorpresas">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Pequeñas sorpresas para ti 🎁</h2>
+        <p class="subtitulo">
+            Elige una tarjeta y descubre el mensajito que escondí para ti.
+            Hay cosas que quiero decirte incluso cuando no encuentro las palabras.
+        </p>
+
+        <div class="mensajes-grid">
+            <div class="mensaje-card" onclick="abrirMensaje(0)">
+                <span class="emoji">🌷</span>
+                <h3>Para tu corazón</h3>
+                <p>Un pequeño recordatorio de lo especial que eres.</p>
+            </div>
+
+            <div class="mensaje-card" onclick="abrirMensaje(1)">
+                <span class="emoji">🌙</span>
+                <h3>Cuando me extrañes</h3>
+                <p>Abre esta tarjeta cuando quieras sentirme cerquita.</p>
+            </div>
+
+            <div class="mensaje-card" onclick="abrirMensaje(2)">
+                <span class="emoji">☀️</span>
+                <h3>Para tus días difíciles</h3>
+                <p>Un abrazo escrito para esos momentos complicados.</p>
+            </div>
+
+            <div class="mensaje-card" onclick="abrirMensaje(3)">
+                <span class="emoji">💌</span>
+                <h3>Algo que confieso</h3>
+                <p>Una cosita bonita que quizá no te digo todos los días.</p>
+            </div>
+
+            <div class="mensaje-card" onclick="abrirMensaje(4)">
+                <span class="emoji">🧸</span>
+                <h3>Un abrazo virtual</h3>
+                <p>Para que recibas un poquito de cariño desde aquí.</p>
+            </div>
+
+            <div class="mensaje-card" onclick="abrirMensaje(5)">
+                <span class="emoji">💖</span>
+                <h3>Mi promesa bonita</h3>
+                <p>Una promesa sencilla, sincera y hecha con amor.</p>
+            </div>
+        </div>
+        <button class="boton scene-next" onclick="mostrarEscena('juego')">Continuar con nuestro juego 💕</button>
+    </div>
+</section>
+
+<section id="juego">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">¿Cuánto nos conocemos? 🥰</h2>
+        <p class="subtitulo">
+            Vamos a jugar un ratito. Elige la respuesta que más te guste.
+            ¡No hay calificación, solo amor!
+        </p>
+
+        <div class="tarjeta">
+            <div class="numero" id="numeroPregunta">PREGUNTA 1 DE 3</div>
+            <div class="juego-pregunta" id="pregunta">
+                ¿Qué es lo que más quiero regalarte?
+            </div>
+            <div class="opciones" id="opciones"></div>
+            <div id="respuestaJuego"></div>
+            <button class="boton" id="siguientePregunta" onclick="siguienteJuego()" style="display:none;">
+                Siguiente pregunta →
+            </button>
+        </div>
+    </div>
+</section>
+
+<section id="carta">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Una carta para mi niña 💌</h2>
+        <p class="subtitulo">
+            Esta parte es para decirte con calma algunas cosas que siento por ti.
+        </p>
+
+        <div class="tarjeta carta">
+            <p>Mi amor:</p>
+
+            <p>
+                Quería hacerte algo diferente, algo que pudieras abrir y leer
+                cuando quisieras recordar lo mucho que te quiero. No soy perfecto
+                y quizá a veces no encuentre las palabras exactas para expresar
+                todo lo que siento, pero quiero que sepas que eres una persona
+                muy especial para mí.
+            </p>
+
+            <p>
+                Me gustan tus detalles, tu forma de ser, tus ocurrencias y esos
+                pequeños momentos que compartimos. A veces las cosas más bonitas
+                no son las más grandes, sino una conversación, una sonrisa, una
+                mirada o un ratito juntos que termina convirtiéndose en un recuerdo
+                bonito.
+            </p>
+
+            <p>
+                No quiero prometerte que todos los días serán perfectos. Quiero
+                seguir aprendiendo contigo, escucharte, respetarte, apoyarte y
+                demostrarte con mis acciones que lo nuestro me importa.
+            </p>
+
+            <p>
+                Gracias por formar parte de mi vida y por regalarme momentos que
+                guardo con cariño. Ojalá podamos seguir creando muchos recuerdos,
+                riéndonos de tonterías y disfrutando de las pequeñas cosas.
+            </p>
+
+            <p>
+                Si alguna vez dudas de lo especial que eres para mí, vuelve a
+                esta página y recuerda que detrás de cada palabra hay alguien
+                que quiso sacarte una sonrisa.
+            </p>
+
+            <p>Con mucho cariño, para ti, mi niña. ❤️</p>
+
+            <div class="firma">Con amor, tu persona favorita 💗</div>
+        </div>
+        <button class="boton scene-next" onclick="mostrarEscena('final')">Ir a tu última sorpresa 💝</button>
+    </div>
+</section>
+
+<section id="final">
+    <div class="contenedor">
+        <h2 class="titulo-seccion">Y todavía falta algo... 💝</h2>
+        <p class="subtitulo">
+            Llegaste hasta aquí y todavía tengo una última sorpresita preparada.
+        </p>
+
+        <button class="boton" onclick="mostrarFinal()">
+            Descubrir la última sorpresa ✨
+        </button>
+
+        <div class="sorpresa-final" id="sorpresaFinal">
+            <div style="font-size:65px;">💖🥹💖</div>
+            <h3>¡Tú eres mi regalo favorito!</h3>
+            <p>
+                Entre tantas personas en este mundo, me alegra poder compartir
+                una parte de mi vida contigo. No necesito que seas perfecta,
+                solo quiero que seas tú, con tus virtudes, tus ocurrencias,
+                tus sueños y todo eso que te hace única.
+            </p>
+            <p style="margin-top:18px;">
+                Si pudiera darte una cosa ahora mismo, sería un abrazo enorme
+                para que sintieras todo el cariño que estas palabras intentan
+                expresar.
+            </p>
+            <div style="font-size:40px; margin-top:18px;">Te quiero muchísimo ❤️</div>
+            <button class="boton boton-secundario" onclick="lluviaCorazones()">
+                Otra lluvia de amor 💕
+            </button>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    Hecho con cariño, pensando en ti. ❤️
+    <br>
+    <span style="font-size:13px;">Un pequeño rincón que siempre será especial.</span>
+</footer>
+
+<div class="modal" id="modal">
+    <div class="modal-contenido">
+        <div class="emoji" id="modalEmoji">💗</div>
+        <h3 id="modalTitulo">Un mensajito para ti</h3>
+        <p id="modalTexto"></p>
+        <button class="boton" onclick="cerrarModal()">Guardar en mi corazón 💖</button>
+    </div>
+</div>
+
+<script>
+const razones = [
+    "Porque tu sonrisa tiene una manera especial de alegrarme el día.",
+    "Porque me encanta tu forma de ser.",
+    "Porque contigo las conversaciones más sencillas se vuelven bonitas.",
+    "Porque me gusta escuchar cómo me cuentas tus cosas.",
+    "Porque tienes una manera única de hacerme sonreír.",
+    "Porque me haces ilusión incluso en los días normales.",
+    "Porque me encanta cuando te ríes de verdad.",
+    "Porque eres una persona especial para mí.",
+    "Porque disfruto cada momento que compartimos.",
+    "Porque me gusta aprender cosas nuevas de ti.",
+    "Porque tienes detalles que se quedan en mi memoria.",
+    "Porque tu voz puede mejorar un día complicado.",
+    "Porque me encanta cuando me cuentas tus sueños.",
+    "Porque quiero verte cumplir las cosas que deseas.",
+    "Porque me gusta tu manera de mirar el mundo.",
+    "Porque contigo puedo compartir mis tonterías.",
+    "Porque me haces sonreír cuando menos lo espero.",
+    "Porque me gusta saber cómo estuvo tu día.",
+    "Porque me importan tus sentimientos.",
+    "Porque quiero que siempre puedas hablar conmigo.",
+    "Porque me gusta cuando compartimos nuestras canciones favoritas.",
+    "Porque haces especiales algunos momentos sin darte cuenta.",
+    "Porque me gusta tu sentido del humor.",
+    "Porque tus mensajes pueden alegrarme de repente.",
+    "Porque me gusta pasar tiempo contigo.",
+    "Porque me encanta descubrir tus gustos.",
+    "Porque admiro las cosas buenas que hay en ti.",
+    "Porque quiero apoyarte cuando tengas nuevos retos.",
+    "Porque me gusta celebrar tus pequeños logros.",
+    "Porque me haces querer ser una mejor persona.",
+    "Porque contigo puedo reírme de cosas simples.",
+    "Porque me gusta conocer tus historias.",
+    "Porque tienes sueños que merecen ser escuchados.",
+    "Porque me gusta cuando me cuentas algo con emoción.",
+    "Porque me haces sentir cariño de una forma bonita.",
+    "Porque quiero aprender a comprenderte mejor.",
+    "Porque me gusta compartir mis planes contigo.",
+    "Porque me gusta cuando nos entendemos con una mirada.",
+    "Porque disfruto nuestras conversaciones inesperadas.",
+    "Porque me gusta que tengamos recuerdos propios.",
+    "Porque quiero crear más momentos bonitos contigo.",
+    "Porque me gusta conocer cada vez más de ti.",
+    "Porque admiro tu manera de seguir adelante.",
+    "Porque mereces que te traten con respeto y cariño.",
+    "Porque me gusta cuando eres tú misma.",
+    "Porque no necesito una ocasión especial para pensarte.",
+    "Porque me gusta hacerte sonreír.",
+    "Porque me gusta cuando compartimos nuestras ocurrencias.",
+    "Porque quiero escucharte incluso cuando no tengas ganas de hablar mucho.",
+    "Porque me importa cómo te sientes.",
+    "Porque me gusta cuando nos contamos cosas pequeñas.",
+    "Porque quiero acompañarte en tus buenos momentos.",
+    "Porque también quiero estar para ti cuando algo te preocupe.",
+    "Porque me gusta conocer las cosas que te hacen feliz.",
+    "Porque tus abrazos tienen algo especial.",
+    "Porque me gusta cuando podemos ser espontáneos.",
+    "Porque quiero cuidar los detalles de nuestra relación.",
+    "Porque me gusta recordar momentos que vivimos juntos.",
+    "Porque me haces apreciar las pequeñas cosas.",
+    "Porque me gusta saber qué música te representa.",
+    "Porque quiero que te sientas valorada.",
+    "Porque me gusta cuando compartimos nuestras ideas.",
+    "Porque me encanta tu manera de sorprenderme.",
+    "Porque me gusta cuando hacemos planes sencillos.",
+    "Porque quiero que podamos hablar con confianza.",
+    "Porque me gusta tu compañía incluso sin hacer nada especial.",
+    "Porque quiero respetar tus tiempos y tus espacios.",
+    "Porque me gusta que tengas tus propios sueños.",
+    "Porque quiero animarte cuando dudes de ti.",
+    "Porque me gusta cuando me enseñas algo nuevo.",
+    "Porque me gusta verte emocionada por algo que amas.",
+    "Porque quiero que te sientas libre de ser tú misma.",
+    "Porque me gusta cuando compartimos una buena noticia.",
+    "Porque quiero aprender de nuestros errores.",
+    "Porque me gusta pedir perdón cuando me equivoco.",
+    "Porque quiero que podamos resolver las cosas hablando.",
+    "Porque valoro tu confianza.",
+    "Porque quiero demostrarte cariño con acciones.",
+    "Porque me gusta que podamos aprender juntos.",
+    "Porque quiero celebrar tus avances, grandes o pequeños.",
+    "Porque me gusta cuando nos hacemos reír mutuamente.",
+    "Porque quiero conocer más de tus sueños.",
+    "Porque me gusta la emoción de volver a verte.",
+    "Porque me gusta cuando me cuentas cómo te sientes.",
+    "Porque quiero que tengas días llenos de motivos para sonreír.",
+    "Porque me gusta compartir contigo mis buenos momentos.",
+    "Porque quiero acompañarte sin impedir que crezcas.",
+    "Porque me gusta cuando nos apoyamos mutuamente.",
+    "Porque quiero construir recuerdos que nos hagan sonreír.",
+    "Porque me gusta tu forma particular de expresarte.",
+    "Porque me encanta cuando algo te hace reír muchísimo.",
+    "Porque quiero que sepas que tus sentimientos importan.",
+    "Porque me gusta cuando encontramos tiempo para nosotros.",
+    "Porque valoro lo que vamos construyendo poco a poco.",
+    "Porque quiero que siempre exista respeto entre nosotros.",
+    "Porque me gusta descubrir nuevos motivos para quererte.",
+    "Porque eres alguien que ocupa un lugar bonito en mi vida.",
+    "Porque agradezco los momentos que compartimos.",
+    "Porque no necesito cien razones para quererte, pero me encanta encontrarlas.",
+    "Porque, entre todas estas razones, la más importante es que eres tú. ❤️"
+];
+
+let indiceRazon = 0;
+
+function mostrarRazon() {
+    document.getElementById("numeroRazon").textContent =
+        `RAZÓN ${indiceRazon + 1} DE ${razones.length}`;
+
+    document.getElementById("textoRazon").textContent =
+        razones[indiceRazon];
+
+    document.getElementById("progreso").style.width =
+        ((indiceRazon + 1) / razones.length * 100) + "%";
+}
+
+function cambiarRazon(direccion) {
+    // Al pulsar "Siguiente" estando en la razón 100, pasamos al sobre.
+    if (direccion > 0 && indiceRazon === razones.length - 1) {
+        mostrarEscena("sobreSorpresa");
+        return;
+    }
+
+    indiceRazon += direccion;
+    if (indiceRazon < 0) indiceRazon = 0;
+    if (indiceRazon >= razones.length) indiceRazon = razones.length - 1;
+    mostrarRazon();
+}
+
+let sobreAbierto = false;
+function abrirSobre() {
+    if (sobreAbierto) return;
+    sobreAbierto = true;
+    document.getElementById("sobreAnimado").classList.add("abierto");
+    document.getElementById("botonAbrirSobre").textContent = "Abriendo tu sorpresa... 💗";
+    setTimeout(() => {
+        mostrarEscena("sorpresas");
+    }, 1250);
+}
+
+function mostrarEscena(id) {
+    document.querySelectorAll("header, main section").forEach(escena => {
+        escena.classList.remove("escena-activa");
+    });
+    const destino = document.getElementById(id);
+    if (destino) destino.classList.add("escena-activa");
+    window.scrollTo(0, 0);
+}
+
+function comenzar() {
+    mostrarEscena("razones");
+
+    const song = document.getElementById("song");
+
+    song.play().then(() => {
+        document.getElementById("estadoMusica").textContent =
+            "💌 Preparé este pequeño regalo con mucho cariño, y esta canción es parte de él.";
+    }).catch(() => {
+        document.getElementById("estadoMusica").textContent =
+            "Para escuchar la música, revisa que musica.mp3 esté junto al archivo HTML y pulsa Música.";
+    });
+}
+
+function alternarMusica() {
+    const song = document.getElementById("song");
+    const estado = document.getElementById("estadoMusica");
+
+    if (song.paused) {
+        song.play().then(() => {
+            estado.textContent = "💌 Preparé este pequeño regalo con mucho cariño, y esta canción es parte de él.";
+        }).catch(() => {
+            estado.textContent =
+                "No se pudo reproducir. Verifica que musica.mp3 esté en la misma carpeta.";
+        });
+    } else {
+        song.pause();
+        estado.textContent = "La música está pausada. Pulsa Música para continuar.";
+    }
+}
+
+const mensajes = [
+    {
+        emoji: "🌷",
+        titulo: "Nunca olvides lo especial que eres",
+        texto: "No tienes que hacer algo extraordinario para ser importante. Tu manera de ser, tus detalles y tu presencia ya hacen que seas alguien muy especial para mí. Espero que nunca olvides lo mucho que vales."
+    },
+    {
+        emoji: "🌙",
+        titulo: "Aunque no esté a tu lado...",
+        texto: "Quiero que recuerdes que hay alguien que piensa en ti con mucho cariño. Ojalá pudiera darte un abrazo ahora mismo, escucharte un ratito y hacerte sonreír. Mientras tanto, te mando uno enorme desde aquí."
+    },
+    {
+        emoji: "☀️",
+        titulo: "Respira, mi niña",
+        texto: "Si hoy las cosas no salen como esperabas, no significa que estés fallando. Puedes descansar, equivocarte y volver a intentarlo. No tienes que poder con todo a la vez. Deseo que encuentres motivos para sonreír y que recuerdes lo capaz que eres."
+    },
+    {
+        emoji: "💌",
+        titulo: "Una pequeña confesión",
+        texto: "A veces me sorprendo sonriendo al recordar alguna conversación contigo o alguna tontería que hicimos. Puede parecer algo pequeño, pero esos momentos se quedan conmigo. Me gusta que seas parte de mis días."
+    },
+    {
+        emoji: "🧸",
+        titulo: "Un abrazo solo para ti",
+        texto: "Imagina que por un momento puedo acercarme, abrazarte con cariño y decirte que todo estará bien. No hace falta que digas nada. A veces un abrazo y un poquito de compañía son suficientes para hacer más ligero el día."
+    },
+    {
+        emoji: "💖",
+        titulo: "Una promesa sincera",
+        texto: "Quiero esforzarme por escucharte, respetarte, hablar con sinceridad y cuidar lo bonito que compartimos. No prometo ser perfecto, pero sí quiero aprender de mis errores y demostrarte con mis acciones que tus sentimientos me importan."
+    }
+];
+
+function abrirMensaje(indice) {
+    document.getElementById("modalEmoji").textContent = mensajes[indice].emoji;
+    document.getElementById("modalTitulo").textContent = mensajes[indice].titulo;
+    document.getElementById("modalTexto").textContent = mensajes[indice].texto;
+    document.getElementById("modal").style.display = "flex";
+}
+
+function cerrarModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+document.getElementById("modal").addEventListener("click", function(event) {
+    if (event.target === this) cerrarModal();
+});
+
+const preguntas = [
+    {
+        pregunta: "¿Qué es lo que más quiero regalarte?",
+        opciones: [
+            "Un montón de cosas materiales",
+            "Cariño, tiempo y momentos bonitos",
+            "Una lista de tareas"
+        ],
+        correcta: 1,
+        mensaje: "¡Eso! Los regalos son bonitos, pero compartir tiempo, cariño y recuerdos también vale muchísimo. 💗"
+    },
+    {
+        pregunta: "¿Qué me gustaría hacer contigo?",
+        opciones: [
+            "Crear recuerdos y reír juntos",
+            "Competir por quién se enoja más",
+            "No volver a hablar"
+        ],
+        correcta: 0,
+        mensaje: "¡Exacto! Quiero que sigamos compartiendo momentos que nos hagan sonreír. 🥰"
+    },
+    {
+        pregunta: "¿Qué quiero que nunca falte entre nosotros?",
+        opciones: [
+            "Orgullo y silencios",
+            "Respeto, confianza y comunicación",
+            "Discusiones por todo"
+        ],
+        correcta: 1,
+        mensaje: "¡Sí! El cariño se disfruta más cuando también hay respeto, confianza y ganas de entenderse. ❤️"
+    }
+];
+
+let indicePregunta = 0;
+let respondida = false;
+
+function cargarPregunta() {
+    respondida = false;
+
+    const p = preguntas[indicePregunta];
+
+    document.getElementById("numeroPregunta").textContent =
+        `PREGUNTA ${indicePregunta + 1} DE ${preguntas.length}`;
+
+    document.getElementById("pregunta").textContent = p.pregunta;
+    document.getElementById("respuestaJuego").textContent = "";
+    document.getElementById("siguientePregunta").style.display = "none";
+
+    const opciones = document.getElementById("opciones");
+    opciones.innerHTML = "";
+
+    p.opciones.forEach((opcion, i) => {
+        const boton = document.createElement("button");
+        boton.className = "opcion";
+        boton.textContent = opcion;
+        boton.onclick = () => responder(i);
+        opciones.appendChild(boton);
+    });
+}
+
+function responder(indice) {
+    if (respondida) return;
+    respondida = true;
+
+    const respuesta = document.getElementById("respuestaJuego");
+    const mensajesPorOpcion = [
+        [
+            "🎁 ¡Esoo! Los regalos son bonitos, pero lo que más quiero es compartir momentos especiales contigo.",
+            "💖 ¡Esoo! Quiero regalarte cariño, tiempo y muchos recuerdos bonitos.",
+            "😂 ¡Jajaja! ¡Esa sí que sería una lista bastante larga!"
+        ],
+        [
+            "🥰 ¡Esoo! Quiero seguir creando recuerdos bonitos y riéndome contigo.",
+            "😂 Mejor llenemos nuestros días de risas y cariño.",
+            "💕 Me gusta poder compartir mis días contigo y seguir conociéndonos."
+        ],
+        [
+            "🤍 Prefiero que podamos hablar y entendernos, sin dejar que el orgullo nos gane.",
+            "💗 ¡Esoo! El respeto, la confianza y la comunicación son importantes para nosotros.",
+            "🥺 Mejor intentemos comprendernos y solucionar las cosas juntos."
+        ]
+    ];
+
+    // Cada opción muestra su propio mensaje; no se revela una respuesta correcta.
+    respuesta.textContent = mensajesPorOpcion[indicePregunta][indice];
+    document.querySelectorAll(".opcion").forEach(boton => {
+        boton.disabled = true;
+        boton.style.opacity = ".6";
+    });
+    document.getElementById("siguientePregunta").style.display = "inline-block";
+}
+
+function siguienteJuego() {
+    indicePregunta++;
+
+    if (indicePregunta >= preguntas.length) {
+        document.getElementById("numeroPregunta").textContent = "¡JUEGO COMPLETADO!";
+        document.getElementById("pregunta").textContent =
+            "¡Terminaste! Te ganaste un abrazo enorme y muchos besitos. 💗";
+
+        document.getElementById("opciones").innerHTML = "";
+        document.getElementById("respuestaJuego").textContent =
+            "Gracias por jugar conmigo. Lo más bonito es seguir conociéndonos cada día.";
+
+        document.getElementById("siguientePregunta").textContent = "Leer tu carta 💌";
+        document.getElementById("siguientePregunta").style.display = "inline-block";
+        document.getElementById("siguientePregunta").onclick = () => mostrarEscena("carta");
+        return;
+    }
+
+    cargarPregunta();
+}
+
+function mostrarFinal() {
+    const final = document.getElementById("sorpresaFinal");
+    final.style.display = "block";
+
+    lluviaCorazones();
+
+    setTimeout(() => {
+        final.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 150);
+}
+
+function crearCorazon() {
+    const corazon = document.createElement("div");
+    const emojis = ["💗", "💕", "💖", "💘", "❤️", "✨", "🌸"];
+
+    corazon.className = "flotante";
+    corazon.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.fontSize = (18 + Math.random() * 25) + "px";
+    corazon.style.animationDuration = (4 + Math.random() * 5) + "s";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(() => corazon.remove(), 9000);
+}
+
+setInterval(() => {
+    if (Math.random() > 0.45) crearCorazon();
+}, 900);
+
+function lluviaCorazones() {
+    for (let i = 0; i < 35; i++) {
+        setTimeout(crearCorazon, i * 90);
+    }
+}
+
+mostrarEscena("inicio");
+mostrarRazon();
+cargarPregunta();
+</script>
+
+</body>
+</html>
